@@ -36,11 +36,12 @@ class AtlasFrameMaker extends FlxFramesCollection
 
 	public static function construct(key:String,?_excludeArray:Array<String> = null, ?noAntialiasing:Bool = false):FlxFramesCollection
 	{
+		var frameCollection:FlxFramesCollection;
+
 		#if !mobile
 		// widthoffset = _widthoffset;
 		// heightoffset = _heightoffset;
 
-		var frameCollection:FlxFramesCollection;
 		var frameArray:Array<Array<FlxFrame>> = [];
 
 		if (Paths.fileExists('images/$key/spritemap1.json', TEXT))
