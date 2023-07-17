@@ -13,6 +13,7 @@ import objects.Character;
 class HScript
 {
 	#if hscript
+
 	public static var parser:Parser = new Parser();
 	public var interp:Interp;
 
@@ -200,7 +201,8 @@ class HScript
 			}
 			#end
 		});
-		#end
 	}
+	#end
+
 	#end
 }
