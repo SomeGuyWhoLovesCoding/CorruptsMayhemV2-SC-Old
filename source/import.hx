@@ -10,6 +10,7 @@ import backend.Discord;
 #if LUA_ALLOWED
 import llua.*;
 import llua.Lua;
+import llua.State;
 #end
 
 import backend.Paths;
