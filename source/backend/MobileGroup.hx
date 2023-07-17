@@ -175,12 +175,11 @@ class MobileGroup extends FlxSpriteGroup
         for (button in buttons) {
             button.alpha = 0.7;
             button.label.color = 0xFFFFFFFF;
-            #if !android
+            #if !mobile
             // Deactivate them when not on mobile
             button.visible = false;
             button.active = false;
             #end
         }
-
     }
 }

@@ -213,14 +213,18 @@ class FreeplayState extends MusicBeatState
 	}
 
 	override function closeSubState() {
+		#if !mobile
 		mobileGrp.visible = true;
+		#end
 		changeSelection(0, false);
 		persistentUpdate = true;
 		super.closeSubState();
 	}
 
 	override function openSubState(SubState:FlxSubState) {
+		#if !mobile
 		mobileGrp.visible = false;
+		#end
 		super.openSubState(SubState);
 	}
 

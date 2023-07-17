@@ -262,14 +262,18 @@ class StoryMenuState extends MusicBeatState
 	}
 
 	override function closeSubState() {
+		#if !mobile
 		mobileGrp.visible = true;
+		#end
 		persistentUpdate = true;
 		changeWeek();
 		super.closeSubState();
 	}
 
 	override function openSubState(SubState:FlxSubState) {
+		#if !mobile
 		mobileGrp.visible = false;
+		#end
 		persistentUpdate = false;
 		super.openSubState(SubState);
 	}
