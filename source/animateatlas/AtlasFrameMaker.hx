@@ -1,5 +1,5 @@
-#if !mobile
 package animateatlas;
+
 import flixel.util.FlxDestroyUtil;
 import openfl.geom.Rectangle;
 import flixel.math.FlxPoint;
@@ -39,6 +39,7 @@ class AtlasFrameMaker extends FlxFramesCollection
 
 	public static function construct(key:String,?_excludeArray:Array<String> = null, ?noAntialiasing:Bool = false):FlxFramesCollection
 	{
+		#if !mobile
 		// widthoffset = _widthoffset;
 		// heightoffset = _heightoffset;
 
@@ -78,6 +79,9 @@ class AtlasFrameMaker extends FlxFramesCollection
 				frameCollection.pushFrame(y);
 			}
 		}
+		#else
+		trace('Animate Atlas is Unsupported for this platform');
+		#end
 		return frameCollection;
 	}
 
@@ -123,4 +127,3 @@ class AtlasFrameMaker extends FlxFramesCollection
 		return daFramez;
 	}
 }
-#end
