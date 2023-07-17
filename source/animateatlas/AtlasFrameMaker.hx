@@ -1,4 +1,4 @@
-#if !mobiled
+#if !mobile
 package animateatlas;
 import flixel.util.FlxDestroyUtil;
 import openfl.geom.Rectangle;
