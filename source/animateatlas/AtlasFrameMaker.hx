@@ -37,6 +37,7 @@ class AtlasFrameMaker extends FlxFramesCollection
 	public static function construct(key:String,?_excludeArray:Array<String> = null, ?noAntialiasing:Bool = false):FlxFramesCollection
 	{
 		var frameCollection:FlxFramesCollection;
+		frameCollection = new FlxFramesCollection(null, FlxFrameCollectionType.IMAGE);
 
 		#if !mobile
 		// widthoffset = _widthoffset;
