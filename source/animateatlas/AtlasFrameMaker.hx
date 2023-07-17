@@ -1,3 +1,4 @@
+#if !mobiled
 package animateatlas;
 import flixel.util.FlxDestroyUtil;
 import openfl.geom.Rectangle;
@@ -122,3 +123,4 @@ class AtlasFrameMaker extends FlxFramesCollection
 		return daFramez;
 	}
 }
+#end
