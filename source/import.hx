@@ -1,6 +1,6 @@
 
 //Discord API
-#if desktop
+#if sys
 import backend.Discord;
 #end
 
