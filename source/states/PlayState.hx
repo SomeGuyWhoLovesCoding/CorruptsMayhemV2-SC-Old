@@ -34,8 +34,6 @@ import openfl.utils.Assets as OpenFlAssets;
 import openfl.events.KeyboardEvent;
 import tjson.TJSON as Json;
 
-import psychlua.FunkinLua;
-
 import cutscenes.CutsceneHandler;
 import cutscenes.DialogueBoxPsych;
 
