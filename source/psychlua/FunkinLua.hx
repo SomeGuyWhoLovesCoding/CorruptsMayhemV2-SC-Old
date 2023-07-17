@@ -44,9 +44,7 @@ class FunkinLua {
 	public static var Function_StopLua:Dynamic = "##PSYCHLUA_FUNCTIONSTOPLUA";
 
 	//public var errorHandler:String->Void;
-	#if LUA_ALLOWED
 	public var lua:State = null;
-	#end
 	public var camTarget:FlxCamera;
 	public var scriptName:String = '';
 	public var closed:Bool = false;

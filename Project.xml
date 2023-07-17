@@ -106,7 +106,7 @@
 	<haxelib name="flixel-addons" />
 
 	<!--Psych stuff needed-->
-	<haxelib name="linc_luajit" if="LUA_ALLOWED"/>
+	<haxelib name="linc_luajit" />
 	<haxelib name="hxCodec" if="VIDEOS_ALLOWED"/>
 	<haxelib name="discord_rpc" if="desktop"/>
 	<haxelib name="tjson" />
