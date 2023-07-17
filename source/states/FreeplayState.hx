@@ -213,7 +213,7 @@ class FreeplayState extends MusicBeatState
 	}
 
 	override function closeSubState() {
-		#if !mobile
+		#if !android
 		mobileGrp.visible = true;
 		#end
 		changeSelection(0, false);
@@ -222,7 +222,7 @@ class FreeplayState extends MusicBeatState
 	}
 
 	override function openSubState(SubState:FlxSubState) {
-		#if !mobile
+		#if !android
 		mobileGrp.visible = false;
 		#end
 		super.openSubState(SubState);

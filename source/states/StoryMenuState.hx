@@ -262,7 +262,7 @@ class StoryMenuState extends MusicBeatState
 	}
 
 	override function closeSubState() {
-		#if !mobile
+		#if !android
 		mobileGrp.visible = true;
 		#end
 		persistentUpdate = true;
@@ -271,7 +271,7 @@ class StoryMenuState extends MusicBeatState
 	}
 
 	override function openSubState(SubState:FlxSubState) {
-		#if !mobile
+		#if !android
 		mobileGrp.visible = false;
 		#end
 		persistentUpdate = false;
