@@ -174,7 +174,7 @@ class StoryMenuState extends MusicBeatState
 		changeDifficulty();
 
 		mobileGrp = new MobileGroup('menu_playfield');
-		add(mobileGrp);
+		#if android add(mobileGrp); #end
 
 		super.create();
 	}
@@ -262,18 +262,14 @@ class StoryMenuState extends MusicBeatState
 	}
 
 	override function closeSubState() {
-		#if !android
 		mobileGrp.visible = true;
-		#end
 		persistentUpdate = true;
 		changeWeek();
 		super.closeSubState();
 	}
 
 	override function openSubState(SubState:FlxSubState) {
-		#if !android
 		mobileGrp.visible = false;
-		#end
 		persistentUpdate = false;
 		super.openSubState(SubState);
 	}

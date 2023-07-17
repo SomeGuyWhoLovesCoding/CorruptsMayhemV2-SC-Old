@@ -206,25 +206,21 @@ class FreeplayState extends MusicBeatState
 		add(text);
 
 		mobileGrp = new MobileGroup('menu_playfield');
-		add(mobileGrp);
+		#if android add(mobileGrp); #end
 
 		updateTexts();
 		super.create();
 	}
 
 	override function closeSubState() {
-		#if !android
 		mobileGrp.visible = true;
-		#end
 		changeSelection(0, false);
 		persistentUpdate = true;
 		super.closeSubState();
 	}
 
 	override function openSubState(SubState:FlxSubState) {
-		#if !android
 		mobileGrp.visible = false;
-		#end
 		super.openSubState(SubState);
 	}
 

@@ -913,7 +913,7 @@ class PlayState extends MusicBeatState
 
 	public function startCountdown()
 	{
-		add(mobileGrp);
+		#if android add(mobileGrp); #end
 		if(startedCountdown) {
 			callOnLuas('onStartCountdown');
 			return false;
