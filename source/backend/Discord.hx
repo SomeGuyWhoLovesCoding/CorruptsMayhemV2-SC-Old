@@ -1,7 +1,9 @@
 package backend;
 
+#if desktop
 import Sys.sleep;
 import discord_rpc.DiscordRpc;
+#end
 import lime.app.Application;
 
 class DiscordClient
@@ -22,6 +24,7 @@ class DiscordClient
 
 	public function new()
 	{
+		#if desktop
 		trace("Discord Client starting...");
 		DiscordRpc.start({
 			clientID: clientID,
@@ -40,6 +43,7 @@ class DiscordClient
 		}
 
 		//DiscordRpc.shutdown();
+		#end
 	}
 
 	public static function check()
@@ -64,12 +68,16 @@ class DiscordClient
 
 	public static function shutdown()
 	{
+		#if desktop
 		DiscordRpc.shutdown();
+		#end
 	}
 	
 	static function onReady()
 	{
+		#if desktop
 		DiscordRpc.presence(_options);
+		#end
 	}
 
 	private static function set_clientID(newID:String)
@@ -82,7 +90,9 @@ class DiscordClient
 			shutdown();
 			isInitialized = false;
 			start();
+			#if desktop
 			DiscordRpc.process();
+			#end
 		}
 		return newID;
 	}
@@ -99,12 +109,15 @@ class DiscordClient
 
 	public static function initialize()
 	{
-		
+		#if desktop
 		var DiscordDaemon = sys.thread.Thread.create(() ->
 		{
 			new DiscordClient();
 		});
 		trace("Discord Client initialized");
+		#else
+		trace("Discord RPC is Unsupported on this platform.");
+		#end
 		isInitialized = true;
 	}
 
@@ -122,7 +135,9 @@ class DiscordClient
 		// Obtained times are in milliseconds so they are divided so Discord can use it
 		_options.startTimestamp = Std.int(startTimestamp / 1000);
 		_options.endTimestamp = Std.int(endTimestamp / 1000);
+		#if desktop
 		DiscordRpc.presence(_options);
+		#end
 
 		//trace('Discord RPC Updated. Arguments: $details, $state, $smallImageKey, $hasStartTimestamp, $endTimestamp');
 	}
