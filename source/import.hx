@@ -7,11 +7,10 @@ import backend.Discord;
 //Psych
 #if MODS_ALLOWED import backend.Mods; #end
 
-#if LUA_ALLOWED
+//Lua stuff needed
 import llua.*;
 import llua.Lua;
 import llua.State;
-#end
 
 import backend.Paths;
 import backend.Controls;

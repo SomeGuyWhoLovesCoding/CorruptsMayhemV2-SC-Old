@@ -162,6 +162,9 @@
 	<haxeflag name="--macro" value="allowPackage('flash')" />
 	<haxeflag name="--macro" value="include('my.pack')" />
 
+	<!--Android fixes (https://github.com/TheLeerName/linc_luajit/blob/master/README.md#compile-on-android-with-command-below)-->
+	<haxedef name="NO_PRECOMPILED_HEADERS" if="android" />
+
 	<!-- _________________________________ Custom _______________________________ -->
 
 	<!--Place custom nodes like icons here (higher priority to override the HaxeFlixel icon)-->
